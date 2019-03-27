@@ -31,3 +31,5 @@ opcServer.StartOPCServer();
 opcServer.AddTag(name, value, value.ToString(), quality, false);
 opcServer.UpdateTag(name, value, quality);
 ```
+注意：由于OPC服务端在加载大量标签时占用较大内存，且.net程序有最大内存限制，超过内存会报OutMemory异常，
+在需要监测大量设备时请谨慎使用，目前测试服务端可支撑20,000点点位监视，超过该范围情况请尝试使用C++调用wtOpcSvr.dll
